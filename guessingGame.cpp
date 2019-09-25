@@ -26,16 +26,19 @@ int main(){
 		randInt = rand() % 101; //Generate number between 0 and 100 inclusive;
 		while (input != randInt) {
 			if(input > randInt) {
+				++numOfGuesses;
 				cout << "Your guess is too high." << endl;
-				cin >> input;
-				numOfGuesses++;
+				cin >> input;	
 			}
 			else if(input < randInt) {
+				++numOfGuesses;
 				cout << "Your guess is too low." << endl;
 				cin >> input;
-				numOfGuesses++;
+				
 			}
+			
 		}	
+		numOfGuesses++;
 		cout << "Congratulations, you have guessed the number! ";
 		cout << "You guessed it in " << numOfGuesses << " tries. ";
 		cout << "Play again? y/n" << endl; 
